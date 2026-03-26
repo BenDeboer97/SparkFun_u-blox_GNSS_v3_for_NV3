@@ -8556,7 +8556,7 @@ bool DevUBLOXGNSS::getModuleInfo(uint16_t maxWait)
   // Payload should now contain ~220 characters (depends on module type)
 
   // We will step through the payload looking at each extension field of 30 bytes
-  char *ptr;
+  const char *ptr;
   uint8_t fwProtMod = 0; // Flags to show if we extracted the FWVER, PROTVER and MOD data
   for (uint16_t extensionNumber = 0; extensionNumber < ((packetCfg.len - 40) / 30); extensionNumber++)
   {
